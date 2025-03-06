@@ -10,4 +10,9 @@ class GreetingController {
     fun greeting(): Greeting {
         return Greeting(1L, "Greeting")
     }
+
+    @GetMapping("/me")
+    fun me(): Greeting {
+        return Greeting(1L, "Berdakh Tlepov")
+    }
 }
