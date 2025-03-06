@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM gradle:8.10-jdk20 AS builder
+FROM gradle:8.10-jdk17 AS builder
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN gradle build --no-daemon
 
 # Stage 2: Run the application
-FROM openjdk:20-slim
+FROM openjdk:17-slim
 
 WORKDIR /app
 

@@ -10,7 +10,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(20)
+        languageVersion = JavaLanguageVersion.of(17) // Changed from 20 to 17
     }
 }
 
@@ -31,6 +31,10 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.addAll("-Xjsr305=strict")
     }
+}
+
+tasks.bootJar {
+    archiveFileName.set("demoapplication-${version}.jar") // Matches Dockerfile COPY
 }
 
 tasks.withType<Test> {
