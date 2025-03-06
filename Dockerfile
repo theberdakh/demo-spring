@@ -1,6 +1,5 @@
 # Stage 1: Build the application
-
-FROM gradle:7.6.0-jdk20 AS builder
+FROM gradle:8.10-jdk20 AS builder
 
 WORKDIR /app
 
@@ -11,12 +10,12 @@ COPY . .
 RUN gradle build --no-daemon
 
 # Stage 2: Run the application
-FROM openjdk:20-jdk-slim
+FROM openjdk:20-slim
 
 WORKDIR /app
 
 # Copy the JAR file from the builder stage
-COPY --from=builder /app/build/libs/*.jar app.jar
+COPY --from=builder /app/build/libs/demoapplication-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the default Spring Boot port
 EXPOSE 8080
