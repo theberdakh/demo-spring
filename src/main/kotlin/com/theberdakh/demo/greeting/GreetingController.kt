@@ -1,4 +1,4 @@
-package com.theberdakh.demo
+package com.theberdakh.demo.greeting
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
