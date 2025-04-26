@@ -1,5 +1,4 @@
-package com.theberdakh.demo.greeting
-
+package com.theberdakh.demo
 
 data class Greeting(
     val id: Long,
